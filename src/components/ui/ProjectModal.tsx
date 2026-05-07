@@ -42,7 +42,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-full object-cover opacity-60"
+              className={`w-full h-full object-cover opacity-60 ${project.imagePosition === 'top' ? 'object-top' : project.imagePosition === 'bottom' ? 'object-bottom' : 'object-center'}`}
             />
           ) : (
             <div className="flex flex-col items-center gap-3 text-violet-700/60">
@@ -98,7 +98,9 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               <dl className="mt-2 space-y-1.5">
                 <div className="flex items-center gap-3">
                   <dt className="text-xs text-slate-500 w-16 shrink-0">기간</dt>
-                  <dd className="text-xs text-slate-300 font-mono">{project.period}</dd>
+                  <dd className="text-xs text-slate-300 font-mono">
+                    {project.period}
+                  </dd>
                 </div>
                 <div className="flex items-center gap-3">
                   <dt className="text-xs text-slate-500 w-16 shrink-0">역할</dt>
@@ -106,7 +108,9 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 </div>
                 {project.team && (
                   <div className="flex items-center gap-3">
-                    <dt className="text-xs text-slate-500 w-16 shrink-0">팀 구성</dt>
+                    <dt className="text-xs text-slate-500 w-16 shrink-0">
+                      팀 구성
+                    </dt>
                     <dd className="text-xs text-slate-300">{project.team}</dd>
                   </div>
                 )}
@@ -168,11 +172,18 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               </h3>
               {project.features.map((group, i) => (
                 <div key={i}>
-                  <p className="text-slate-200 text-sm font-semibold mb-2">{group.title}</p>
+                  <p className="text-slate-200 text-sm font-semibold mb-2">
+                    {group.title}
+                  </p>
                   <ul className="space-y-1.5">
                     {group.items.map((item, j) => (
-                      <li key={j} className="flex items-start gap-3 text-slate-400 text-sm">
-                        <span className="text-violet-500 mt-0.5 shrink-0">▸</span>
+                      <li
+                        key={j}
+                        className="flex items-start gap-3 text-slate-400 text-sm"
+                      >
+                        <span className="text-violet-500 mt-0.5 shrink-0">
+                          ▸
+                        </span>
                         {item}
                       </li>
                     ))}
@@ -184,17 +195,24 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
           {/* 트러블슈팅 */}
           {project.troubleshooting && project.troubleshooting.length > 0 && (
-            <div className="mb-10 space-y-5">
+            <div className="mb-6 space-y-5">
               <h3 className="text-violet-400 font-semibold tracking-widest uppercase">
                 트러블슈팅
               </h3>
               {project.troubleshooting.map((group, i) => (
                 <div key={i}>
-                  <p className="text-slate-200 text-sm font-semibold mb-2">{group.title}</p>
+                  <p className="text-slate-200 text-sm font-semibold mb-2">
+                    {group.title}
+                  </p>
                   <ul className="space-y-1.5">
                     {group.items.map((item, j) => (
-                      <li key={j} className="flex items-start gap-3 text-slate-400 text-sm">
-                        <span className="text-violet-500 mt-0.5 shrink-0">▸</span>
+                      <li
+                        key={j}
+                        className="flex items-start gap-3 text-slate-400 text-sm"
+                      >
+                        <span className="text-violet-500 mt-0.5 shrink-0">
+                          ▸
+                        </span>
                         {item}
                       </li>
                     ))}
@@ -206,11 +224,13 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
           {/* 배운점 */}
           {project.learned && (
-            <div className="mb-10">
+            <div className="mb-6">
               <h3 className="text-violet-400 font-semibold tracking-widest uppercase mb-3">
                 배운점
               </h3>
-              <p className="text-slate-300 leading-relaxed text-sm">{project.learned}</p>
+              <p className="text-slate-300 leading-relaxed text-sm">
+                {project.learned}
+              </p>
             </div>
           )}
 
