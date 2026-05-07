@@ -77,10 +77,13 @@ export const projects: Project[] = [
     github: "https://github.com/nue-os/front-module",
     demo: "https://www.youtube.com/watch?v=Kzm0acL3VCY&t=9s",
     featured: true,
+    image: "/images/datcha/og.png",
+    imagePosition: "center",
     screenshots: [
       "/images/datcha/1.png",
       "/images/datcha/2.png",
       "/images/datcha/3.png",
+      "/images/datcha/4.png",
     ],
   },
   {
@@ -145,10 +148,13 @@ export const projects: Project[] = [
     github: "https://github.com/nue-os/farmInfo-fe",
     demo: null,
     featured: true,
+    image: "/images/farminfo/og.png",
+    imagePosition: "top",
     screenshots: [
       "/images/farminfo/1.png",
       "/images/farminfo/2.png",
       "/images/farminfo/3.png",
+      "/images/farminfo/4.png",
     ],
   },
   {
@@ -206,7 +212,13 @@ export const projects: Project[] = [
     github: "https://github.com/nue-os/fe_sharedoffice",
     demo: null,
     featured: false,
-    screenshots: ["/images/mile/1.png", "/images/mile/2.png"],
+    image: "/images/mile/og.png",
+    imagePosition: "top",
+    screenshots: [
+      "/images/mile/1.png",
+      "/images/mile/2.png",
+      "/images/mile/3.png",
+    ],
   },
   {
     title: "가상 안경 피팅 서비스",
@@ -255,10 +267,13 @@ export const projects: Project[] = [
     github: "https://github.com/nue-os/capstone-2023-31",
     demo: "https://www.youtube.com/watch?v=NodPse4up2s",
     featured: false,
+    image: "/images/glassfit/og.png",
+    imagePosition: "center",
     screenshots: [
       "/images/glassfit/1.png",
       "/images/glassfit/2.png",
       "/images/glassfit/3.png",
+      "/images/glassfit/4.png",
     ],
   },
 ];
