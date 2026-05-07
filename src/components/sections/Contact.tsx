@@ -1,5 +1,5 @@
-import SectionTitle from '../ui/SectionTitle'
-import { useScrollFadeIn } from '../../hooks/useScrollFadeIn'
+import SectionTitle from "../ui/SectionTitle";
+import { useScrollFadeIn } from "../../hooks/useScrollFadeIn";
 
 export default function Contact() {
   const fadeRef = useScrollFadeIn();
@@ -10,7 +10,8 @@ export default function Contact() {
 
         <div ref={fadeRef} className="mt-16">
           <p className="text-slate-400 text-lg leading-relaxed mb-4">
-            새로운 기회나 협업에 대해 이야기 나누고 싶으시면 편하게 연락 주세요.
+            새로운 도전 앞에서 '그럼 해보죠!'가 먼저 나오는 사람입니다. <br />
+            좋은 기회든 가벼운 대화든 편하게 연락 주세요.
           </p>
           <p className="text-slate-500 mb-12">
             이메일로 연락 주시면 빠르게 답변 드리겠습니다!
@@ -26,7 +27,7 @@ export default function Contact() {
           {/* 소셜 링크 */}
           <div className="flex justify-center gap-6 mt-16">
             <a
-              href="https://github.com"
+              href="https://github.com/nue-os"
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-500 hover:text-violet-400 transition-colors duration-200"
@@ -38,7 +39,7 @@ export default function Contact() {
             </a>
 
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/soeun-kim-85bb63308/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-500 hover:text-violet-400 transition-colors duration-200"
@@ -50,7 +51,7 @@ export default function Contact() {
             </a>
 
             <a
-              href="https://tistory.com"
+              href="https://nueos.tistory.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-500 hover:text-violet-400 transition-colors duration-200"
