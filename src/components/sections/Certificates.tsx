@@ -38,7 +38,7 @@ export default function Certificates() {
       <div className="max-w-6xl mx-auto">
         <SectionTitle number="04" title="Certificates" />
 
-        <div ref={fadeRef} className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div ref={fadeRef} className="mt-16 grid sm:grid-cols-3 gap-4">
           {certificates.map((cert, i) => (
             <CertCard key={i} cert={cert} />
           ))}
