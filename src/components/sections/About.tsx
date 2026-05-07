@@ -73,7 +73,7 @@ export default function About() {
                 <img
                   src="/images/profile.png"
                   alt="김소은 프로필 사진"
-                  className="relative w-full h-full object-cover rounded-2xl"
+                  className="relative w-full h-full object-cover object-top rounded-2xl"
                   onError={(e) => {
                     e.currentTarget.style.display = "none";
                     e.currentTarget.nextElementSibling?.removeAttribute(
