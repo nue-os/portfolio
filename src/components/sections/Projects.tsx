@@ -20,7 +20,7 @@ function ProjectCard({ project, onClick }: ProjectCardProps) {
       {/* 대표 이미지 */}
       <div className="relative h-48 bg-linear-to-br from-violet-900/40 via-[#1a1a2e] to-[#0a0a0f] flex items-center justify-center overflow-hidden">
         {project.image ? (
-          <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+          <img src={project.image} alt={project.title} className={`w-full h-full object-cover ${project.imagePosition === 'top' ? 'object-top' : project.imagePosition === 'bottom' ? 'object-bottom' : 'object-center'}`} />
         ) : (
           <svg className="w-12 h-12 text-violet-800/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
