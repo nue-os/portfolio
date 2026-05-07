@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Background -->
+  <rect width="48" height="48" rx="11" fill="#0a0a0f"/>
+
+  <!-- Glow -->
+  <circle cx="24" cy="24" r="15" fill="#7c3aed" opacity="0.18" filter="url(#glow)"/>
+
+  <!-- Outer pentagon -->
+  <polygon
+    points="24,8 39.2,19.1 33.4,36.9 14.6,36.9 8.8,19.1"
+    stroke="#a78bfa" stroke-width="0.9" fill="none"/>
+
+  <!-- Inner pentagon (rotated 36°) -->
+  <polygon
+    points="28.7,17.5 31.6,26.5 24,32 16.4,26.5 19.3,17.5"
+    stroke="#7c3aed" stroke-width="0.8" fill="none"/>
+
+  <!-- Outer → inner connecting lines -->
+  <line x1="24"    y1="8"    x2="19.3" y2="17.5" stroke="#a78bfa" stroke-width="0.7"/>
+  <line x1="24"    y1="8"    x2="28.7" y2="17.5" stroke="#c4b5fd" stroke-width="0.7"/>
+  <line x1="39.2"  y1="19.1" x2="28.7" y2="17.5" stroke="#a78bfa" stroke-width="0.7"/>
+  <line x1="39.2"  y1="19.1" x2="31.6" y2="26.5" stroke="#a78bfa" stroke-width="0.7"/>
+  <line x1="33.4"  y1="36.9" x2="31.6" y2="26.5" stroke="#a78bfa" stroke-width="0.7"/>
+  <line x1="33.4"  y1="36.9" x2="24"   y2="32"   stroke="#a78bfa" stroke-width="0.7"/>
+  <line x1="14.6"  y1="36.9" x2="24"   y2="32"   stroke="#a78bfa" stroke-width="0.7"/>
+  <line x1="14.6"  y1="36.9" x2="16.4" y2="26.5" stroke="#a78bfa" stroke-width="0.7"/>
+  <line x1="8.8"   y1="19.1" x2="16.4" y2="26.5" stroke="#a78bfa" stroke-width="0.7"/>
+  <line x1="8.8"   y1="19.1" x2="19.3" y2="17.5" stroke="#a78bfa" stroke-width="0.7"/>
+
+  <!-- Vertex dots -->
+  <circle cx="24"   cy="8"    r="1.2" fill="#ede9fe"/>
+  <circle cx="39.2" cy="19.1" r="1"   fill="#c4b5fd"/>
+  <circle cx="33.4" cy="36.9" r="1"   fill="#a78bfa"/>
+  <circle cx="14.6" cy="36.9" r="1"   fill="#a78bfa"/>
+  <circle cx="8.8"  cy="19.1" r="1"   fill="#c4b5fd"/>
+
+  <defs>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+  </defs>
+</svg>
