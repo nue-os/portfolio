@@ -23,7 +23,14 @@ export default function Experience() {
                 {/* 타임라인 점 */}
                 <div className="hidden md:block absolute left-1/2 top-6 w-3 h-3 bg-violet-500 rounded-full -translate-x-1/2 shadow-[0_0_12px_rgba(124,58,237,0.8)]" />
 
-                <div className="md:w-1/2" />
+                <div className={`hidden md:flex md:w-1/2 flex-col justify-center gap-1 ${i % 2 === 0 ? 'items-end pr-12' : 'items-start pl-12'}`}>
+                  <span className="text-3xl font-bold text-violet-900/60 font-mono leading-none">
+                    {exp.period.split('—')[0].trim()}
+                  </span>
+                  <span className="text-slate-600 text-sm tracking-widest uppercase">
+                    {exp.company}
+                  </span>
+                </div>
 
                 <div
                   className={`md:w-1/2 bg-[#111118] border border-violet-900/30 rounded-2xl p-6 hover:border-violet-600/50 transition-all duration-300 hover:-translate-y-1 ${
