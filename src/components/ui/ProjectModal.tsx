@@ -95,13 +95,31 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               <h2 className="text-white text-2xl font-bold mb-2">
                 {project.title}
               </h2>
-              <div className="flex flex-wrap gap-2">
-                <span className="text-xs text-violet-400 bg-violet-900/30 border border-violet-800/40 px-3 py-1 rounded-full font-mono">
-                  {project.period}
-                </span>
-                <span className="text-xs text-slate-300 bg-slate-800/50 border border-slate-700/40 px-3 py-1 rounded-full">
-                  {project.role}
-                </span>
+              <dl className="mt-2 space-y-1.5">
+                <div className="flex items-center gap-3">
+                  <dt className="text-xs text-slate-500 w-16 shrink-0">기간</dt>
+                  <dd className="text-xs text-slate-300 font-mono">{project.period}</dd>
+                </div>
+                <div className="flex items-center gap-3">
+                  <dt className="text-xs text-slate-500 w-16 shrink-0">역할</dt>
+                  <dd className="text-xs text-slate-300">{project.role}</dd>
+                </div>
+                {project.team && (
+                  <div className="flex items-center gap-3">
+                    <dt className="text-xs text-slate-500 w-16 shrink-0">팀 구성</dt>
+                    <dd className="text-xs text-slate-300">{project.team}</dd>
+                  </div>
+                )}
+              </dl>
+              <div className="flex flex-wrap gap-1.5 mt-3">
+                {project.tech.map((t) => (
+                  <span
+                    key={t}
+                    className="text-xs text-violet-300 font-mono bg-violet-900/20 border border-violet-800/40 px-2.5 py-1 rounded-full"
+                  >
+                    {t}
+                  </span>
+                ))}
               </div>
             </div>
 
@@ -133,8 +151,8 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           <hr className="border-violet-900/30 mb-6" />
 
           {/* 설명 */}
-          <div className="mb-6">
-            <h3 className="text-violet-400 text-xs font-semibold tracking-widest uppercase mb-3">
+          <div className="mb-10">
+            <h3 className="text-violet-400 font-semibold tracking-widest uppercase mb-3">
               Overview
             </h3>
             <p className="text-slate-300 leading-relaxed">
@@ -144,40 +162,76 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
           {/* 주요 기능 */}
           {project.features.length > 0 && (
-            <div className="mb-6">
-              <h3 className="text-violet-400 text-xs font-semibold tracking-widest uppercase mb-3">
+            <div className="mb-10 space-y-5">
+              <h3 className="text-violet-400 font-semibold tracking-widest uppercase">
                 주요 기능
               </h3>
-              <ul className="space-y-2">
-                {project.features.map((f, i) => (
-                  <li
-                    key={i}
-                    className="flex items-start gap-3 text-slate-300 text-sm"
-                  >
-                    <span className="text-violet-500 mt-0.5 shrink-0">▸</span>
-                    {f}
-                  </li>
-                ))}
-              </ul>
+              {project.features.map((group, i) => (
+                <div key={i}>
+                  <p className="text-slate-200 text-sm font-semibold mb-2">{group.title}</p>
+                  <ul className="space-y-1.5">
+                    {group.items.map((item, j) => (
+                      <li key={j} className="flex items-start gap-3 text-slate-400 text-sm">
+                        <span className="text-violet-500 mt-0.5 shrink-0">▸</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           )}
 
-          {/* 기술 스택 */}
-          <div>
-            <h3 className="text-violet-400 text-xs font-semibold tracking-widest uppercase mb-3">
-              Tech Stack
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {project.tech.map((t) => (
-                <span
-                  key={t}
-                  className="text-sm text-violet-300 font-mono bg-violet-900/20 border border-violet-800/40 px-3 py-1.5 rounded-full"
-                >
-                  {t}
-                </span>
+          {/* 트러블슈팅 */}
+          {project.troubleshooting && project.troubleshooting.length > 0 && (
+            <div className="mb-10 space-y-5">
+              <h3 className="text-violet-400 font-semibold tracking-widest uppercase">
+                트러블슈팅
+              </h3>
+              {project.troubleshooting.map((group, i) => (
+                <div key={i}>
+                  <p className="text-slate-200 text-sm font-semibold mb-2">{group.title}</p>
+                  <ul className="space-y-1.5">
+                    {group.items.map((item, j) => (
+                      <li key={j} className="flex items-start gap-3 text-slate-400 text-sm">
+                        <span className="text-violet-500 mt-0.5 shrink-0">▸</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
             </div>
-          </div>
+          )}
+
+          {/* 배운점 */}
+          {project.learned && (
+            <div className="mb-10">
+              <h3 className="text-violet-400 font-semibold tracking-widest uppercase mb-3">
+                배운점
+              </h3>
+              <p className="text-slate-300 leading-relaxed text-sm">{project.learned}</p>
+            </div>
+          )}
+
+          {/* 스크린샷 */}
+          {project.screenshots && project.screenshots.length > 0 && (
+            <div>
+              <h3 className="text-violet-400 font-semibold tracking-widest uppercase mb-3">
+                Screenshots
+              </h3>
+              <div className="grid grid-cols-2 gap-3">
+                {project.screenshots.map((src, i) => (
+                  <img
+                    key={i}
+                    src={src}
+                    alt={`${project.title} 스크린샷 ${i + 1}`}
+                    className="w-full rounded-xl border border-violet-900/30 object-cover"
+                  />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

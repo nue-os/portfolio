@@ -4,10 +4,14 @@ export interface Project {
   longDescription: string
   period: string
   role: string
-  features: string[]
+  features: { title: string; items: string[] }[]
+  troubleshooting?: { title: string; items: string[] }[]
   tech: string[]
   github: string
   demo: string | null
   featured: boolean
   image?: string
+  screenshots?: string[]
+  learned?: string
+  team?: string
 }
