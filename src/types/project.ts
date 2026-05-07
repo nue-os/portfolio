@@ -11,6 +11,7 @@ export interface Project {
   demo: string | null
   featured: boolean
   image?: string
+  imagePosition?: 'top' | 'center' | 'bottom'
   screenshots?: string[]
   learned?: string
   team?: string
