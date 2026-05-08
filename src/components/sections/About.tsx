@@ -39,8 +39,8 @@ export default function About() {
                 연결하는 것을 중요하게 생각합니다.
               </p>
               <p className="text-slate-400 leading-relaxed">
-                팀과 함께 항해하는 것을 즐기며, UI/UX 디자인을 통해 사용자가
-                길을 잃지 않는 인터페이스를 설계하는 것이 저의 목표입니다.
+                팀과 함께 만들어가는 것을 좋아하며, 사용자가 자연스럽게
+                사용할 수 있는 인터페이스를 구현하는 것이 저의 목표입니다.
               </p>
 
               <div className="pt-4">
