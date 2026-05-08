@@ -211,6 +211,63 @@ export const projects: Project[] = [
     ],
   },
   {
+    title: "주식 정보 조회 서비스",
+    description:
+      "KIS Open API를 활용한 토스증권 클론 — 실시간 주식 시세·관심 종목·커뮤니티 제공",
+    longDescription:
+      "KIS Open API로 실시간 주식 데이터를 받아 토스증권 UI를 클론한 서비스입니다. 프론트엔드와 백엔드를 모두 구현했으며, SMS 인증 기반 로그인, 관심 종목 관리, 종목별 커뮤니티 기능을 제공합니다.",
+    learned:
+      "프론트엔드와 백엔드를 함께 맡으면서 양쪽 코드가 어떻게 맞물리는지 직접 확인하게 됐습니다. API 응답 구조를 내가 설계해야 하니 프론트에서 어떻게 쓸지를 먼저 생각하고 스키마를 잡게 됐고, 반대로 백엔드가 내보내는 데이터 형식이 달라지면 UI 전체가 흔들린다는 것도 몸으로 느꼈습니다. 풀스택으로 만들어보니 경계에서 생기는 문제들이 더 잘 보였습니다.",
+    period: "2025.03",
+    team: "개발자 2",
+    role: "풀스택 개발",
+    features: [
+      {
+        title: "주식 시세 조회",
+        items: [
+          "홈 화면에서 거래대금·급상승·급하락 탭별로 종목 목록을 조회, URL 파라미터로 탭 상태를 관리해 공유 가능한 링크 지원",
+          "상세 페이지에서 종목명·현재가·등락폭·등락률을 색상으로 구분해 표시 (상승 빨강, 하락 파랑)",
+          "백엔드에서 KIS OpenAPI 두 엔드포인트를 Mono로 비동기 병렬 호출해 종목 기본 정보와 시세를 합산 제공",
+        ],
+      },
+      {
+        title: "관심 종목",
+        items: [
+          "우측 고정 사이드바에서 관심 종목 목록 조회·추가·삭제, 슬라이드 인/아웃 애니메이션 적용",
+          "useAuth 커스텀 훅에서 관심 종목 상태를 전역 관리, 홈·상세·사이드바 간 즉시 동기화",
+          "백엔드에서 JWT 토큰으로 userId 추출 후 관심 종목 CRUD 처리, MyBatis로 DB 연동",
+        ],
+      },
+      {
+        title: "커뮤니티",
+        items: [
+          "종목 상세 페이지에 종목별 댓글 작성·조회 기능 구현, textarea 자동 높이 확장 적용",
+          "백엔드에서 stock_code 기준으로 댓글을 저장·조회하는 API 구현, MyBatis 어노테이션(@Select·@Insert)으로 DB 연동",
+        ],
+      },
+    ],
+    tech: [
+      "React",
+      "JavaScript",
+      "Vite",
+      "Material-UI",
+      "Spring Boot",
+      "MyBatis",
+      "MySQL",
+      "JWT",
+    ],
+    github: "https://github.com/mini-project-team-5",
+    demo: "https://www.youtube.com/watch?v=Gih8RhW0CKY",
+    image: "/images/toss-securities/og.png",
+    imagePosition: "center",
+    screenshots: [
+      "/images/toss-securities/1.png",
+      "/images/toss-securities/2.png",
+      "/images/toss-securities/3.png",
+      "/images/toss-securities/4.png",
+    ],
+  },
+  {
     title: "공유 오피스 예약 서비스",
     description:
       "공간 예약·일정·커뮤니티를 통합 제공하는 거점 공유 오피스 서비스",
