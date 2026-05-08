@@ -87,7 +87,7 @@ export const projects: Project[] = [
   {
     title: "월동 채소 재배 면적 신고 시스템",
     description:
-      "제주 월동 채소 재배 면적 온라인 신고 시스템 — 디지랩 챌린지 대상 수상",
+      "제주 월동 채소 재배 면적 온라인 신고 시스템 — 디지랩 챌린지 해커톤 대상 수상",
     longDescription:
       "오프라인으로만 받던 제주 월동작물 신고를 온라인으로 전환한 플랫폼입니다. 기존 2~3일 소요되던 현장 조사를 10분 이내로 단축했습니다. 재배 면적과 출하 현황을 차트로 시각화하고, 관리자가 허위 신고를 빠르게 처리할 수 있는 승인/거절 워크플로우를 설계했습니다.",
     learned:
@@ -179,23 +179,25 @@ export const projects: Project[] = [
       {
         title: "로그인",
         items: [
-          "NextAuth로 서버 사이드 JWT 인증 처리, 세션을 암호화해 쿠키에 저장",
+          "NextAuth Credentials로 이메일·비밀번호 검증, JWT 세션 전략으로 accessToken을 쿠키에서 추출해 세션에 저장",
           "미들웨어에서 인증 여부를 검사하고 callbackUrl을 보존해 로그인 후 원래 페이지로 복귀",
           "react-hook-form으로 실시간 유효성 검사 제공",
         ],
       },
       {
-        title: "커스텀 타임 셀렉터",
+        title: "일정 관리",
         items: [
-          "외부 라이브러리 없이 시간 입력 컴포넌트를 직접 구현, 의존성 추가 없이 엣지 케이스 처리",
-          "@use-gesture/react로 공간 목록에 드래그 스크롤을 구현해 터치·마우스 환경 모두 지원",
+          "일정 제목·색상·날짜·시간·참석자·위치를 한 폼에서 관리, react-hook-form Controller로 필드별 상태 분리",
+          "Zustand 스토어에서 시작·종료 시간 유효성(시작 < 종료)을 검증해 잘못된 일정 생성 방지",
+          "외부 라이브러리 없이 날짜·시간 선택 UI를 직접 구현, suppressHydrationWarning으로 SSR 호환성 확보",
         ],
       },
       {
-        title: "커뮤니티 기능",
+        title: "커뮤니티",
         items: [
-          "Tanstack Query로 서버 상태와 클라이언트 상태를 분리 관리",
-          "게시물·댓글 작성·수정·삭제 후 목록 즉시 반영",
+          "자유게시판 목록 구현 — 지점별 필터링, 좋아요 수 기준 BEST 게시글 상단 표시",
+          "게시글 상세·댓글 작성·수정·삭제 구현, Tanstack Query로 CRUD 후 목록 즉시 반영",
+          "@use-gesture/react로 게시글 이미지에 드래그 스크롤 적용, 터치·마우스 환경 모두 지원",
         ],
       },
     ],
@@ -240,18 +242,26 @@ export const projects: Project[] = [
     role: "프론트엔드 개발",
     features: [
       {
-        title: "실시간 가상 피팅",
+        title: "얼굴형 분석",
         items: [
+          "촬영 후 미리보기 단계를 거쳐 분석 요청하는 2단계 UI 구현",
           "react-webcam으로 웹캠 스트림 제어, 캡처 이미지를 dataURItoBlob으로 변환해 서버에 전송",
           "CSRF 토큰을 요청 헤더에 포함해 위조 요청 차단, ML 분석 결과를 받아 추천 안경 렌더링",
-          "useCallback으로 이벤트 핸들러를 메모이제이션해 불필요한 리렌더링 방지",
+          "분석 대기 중 로딩 애니메이션으로 처리 상태 시각화, 결과 수신 후 Radar 차트로 5가지 얼굴형 수치 표현",
         ],
       },
       {
-        title: "얼굴형 분석 결과",
+        title: "가상 피팅",
         items: [
-          "Radar 차트로 분석 수치를 시각화해 사용자가 직관적으로 결과를 이해할 수 있도록 구현",
-          "분석 대기 중 타이핑 애니메이션으로 로딩 상태를 시각적으로 표현",
+          "안경을 선택하면 웹캠으로 실시간 착용 이미지를 생성, 서버에서 오버레이 처리된 Base64 이미지를 받아 렌더링",
+          "미러 반전 토글로 셀카 방향 전환 지원, 얼굴 미감지 시 안내 메시지 표시",
+        ],
+      },
+      {
+        title: "제품 목록",
+        items: [
+          "얼굴형별 필터링과 이름·가격 기준 4가지 정렬 옵션 제공",
+          "react-slick 캐러셀에 반응형 breakpoint를 설정해 화면 크기별로 표시 개수 조정",
         ],
       },
       {
@@ -280,7 +290,6 @@ export const projects: Project[] = [
       "/images/glassfit/1.png",
       "/images/glassfit/2.png",
       "/images/glassfit/3.png",
-      "/images/glassfit/4.png",
     ],
   },
 ];
