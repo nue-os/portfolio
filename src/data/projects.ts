@@ -16,7 +16,8 @@ export const projects: Project[] = [
       {
         title: "인증/인가",
         items: [
-          "Zustand로 인증 상태를 전역 관리, 권한에 따라 접근 페이지 분기 처리",
+          "사용자·관리자 인증 상태를 Zustand 스토어로 분리 관리, sessionStorage에서 토큰·ID를 초기 로드해 새로고침 후에도 로그인 상태 유지",
+          "권한 목록을 별도 스토어로 관리해 권한에 따라 접근 가능한 페이지 분기 처리",
           "응답 코드별 에러 분기로 비로그인·권한 없음 상황마다 명확한 피드백 제공",
         ],
       },
@@ -25,7 +26,7 @@ export const projects: Project[] = [
         items: [
           "react-hook-form 필드별 독립 상태 관리로 불필요한 리렌더링 제거",
           "일반 판매·입찰 방식 선택에 따른 조건부 렌더링으로 유연한 폼 처리",
-          "Zod 스키마로 입력값을 타입·범위·형식 단위로 검증, 서버 요청 전 클라이언트 차단",
+          "Zod 스키마로 이메일·비밀번호 형식, 데이터 단위(MB/GB)별 최솟값·입력 단위·보유량 초과 여부까지 검증해 서버 요청 전 클라이언트에서 차단",
         ],
       },
       {
@@ -37,10 +38,13 @@ export const projects: Project[] = [
         ],
       },
       {
-        title: "실시간 알림",
+        title: "공통 컴포넌트",
         items: [
-          "SSE로 거래·입찰 이벤트를 실시간 수신, 지수 백오프로 연결 끊김 시 자동 재연결",
-          "BottomSheet에 터치 드래그 제스처를 직접 구현, 외부 라이브러리 없이 모바일 UX 확보",
+          "Button — shape·size를 prop으로 제어, Framer Motion 클릭 애니메이션 적용",
+          "Input — 세 가지 shape 지원, 비밀번호 토글·에러 메시지·floating label 처리",
+          "Table — 제네릭으로 타입 안전성 확보, 컬럼·셀 렌더링·행 클릭 여부를 외부 주입받고 클릭된 행을 accordion으로 확장해 상세 테이블 표시",
+          "Graph — Line·Bar 차트를 type prop 하나로 전환, 통신사별 색상 매핑과 모바일 대응 폰트 크기 처리",
+          "그 외 다수의 공통 컴포넌트 구현",
         ],
       },
     ],
@@ -57,12 +61,6 @@ export const projects: Project[] = [
         items: [
           "refreshToken이 쿠키에 저장되어 모든 탭이 공유되지만 accessToken은 탭별 sessionStorage에 저장되어 충돌 발생",
           "sessionStorage userId와 서버 검증을 조합해 불일치 시 자동 로그아웃 처리로 해결",
-        ],
-      },
-      {
-        title: "웹 알림 중복 발생",
-        items: [
-          "구독 로직 리팩토링으로 동일 이벤트가 여러 번 트리거되던 문제 제거",
         ],
       },
     ],
@@ -101,22 +99,31 @@ export const projects: Project[] = [
       {
         title: "신고 워크플로우",
         items: [
+          "재배면적·출하량 신고를 3단계 폼으로 구성, FormTab 진행 표시기로 현재 단계 시각화",
           "Zustand로 단계별 입력 상태를 전역 관리해 페이지 이동 후에도 입력 내용 유지",
+          "react-hook-form rules로 필드별 유효성 검사, 필수값·형식 오류를 단계 이동 전 차단",
         ],
       },
       {
         title: "데이터 시각화",
         items: [
-          "Chart.js·Recharts로 재배 면적·출하 현황 차트 구현",
+          "Doughnut·HalfDoughnut·수평 막대 차트를 각 데이터 특성에 맞게 조합해 구현",
+          "HalfDoughnut 차트에서 커버리지 비율에 따라 색상을 동적으로 변경",
           "SSR 환경에서 차트 라이브러리의 hydration 오류를 dynamic import로 방지",
         ],
       },
       {
         title: "관리자 기능",
         items: [
-          "URL 변경 없이 Zustand로 화면 전환해 관리자 UX 개선",
-          "Tanstack Query로 승인/거절 처리 결과를 즉시 UI에 반영, 수동 새로고침 불필요",
-          "SSE로 신고 접수 이벤트를 실시간 수신해 대시보드 자동 갱신",
+          "URL 변경 없이 Zustand 탭 상태로 PENDING·APPROVED·REJECTED 화면 전환",
+          "탭 변경 시 useEffect로 해당 상태의 신고 목록을 재조회해 즉시 반영",
+          "SSE로 신고 접수 이벤트를 실시간 수신하는 커스텀 훅 구현, 초기 알림 로드 후 EventSource로 신규 알림 추가",
+        ],
+      },
+      {
+        title: "공통 컴포넌트",
+        items: [
+          "Input·Dropdown·RadioGroup을 제네릭으로 설계해 react-hook-form useController와 통합",
         ],
       },
     ],
