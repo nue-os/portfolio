@@ -73,8 +73,7 @@ export const projects: Project[] = [
       "Tanstack Query",
     ],
     github: "https://github.com/nue-os/front-module",
-    demo: "https://www.youtube.com/watch?v=Kzm0acL3VCY&t=9s",
-    featured: true,
+    demo: "https://www.youtube.com/watch?v=Kzm0acL3VCY",
     image: "/images/datcha/og.png",
     imagePosition: "center",
     screenshots: [
@@ -154,7 +153,6 @@ export const projects: Project[] = [
     ],
     github: "https://github.com/nue-os/farmInfo-fe",
     demo: null,
-    featured: true,
     image: "/images/farminfo/og.png",
     imagePosition: "top",
     screenshots: [
@@ -162,6 +160,54 @@ export const projects: Project[] = [
       "/images/farminfo/2.png",
       "/images/farminfo/3.png",
       "/images/farminfo/4.png",
+    ],
+  },
+  {
+    title: "AI 챗봇 통신사 요금제 추천 서비스",
+    description: "AI 챗봇으로 통신사 요금제를 추천받고 비교할 수 있는 서비스",
+    longDescription:
+      "AI 챗봇을 통해 사용자의 데이터 사용 패턴과 예산에 맞는 통신사 요금제를 추천하는 웹 서비스입니다. 직관적인 챗봇 인터페이스와 요금제 비교 기능으로 복잡한 요금제 선택을 간편하게 도와줍니다.",
+    learned:
+      "캐러셀 자동 재생을 사용자가 클릭한 뒤 멈출지 계속할지, 스크롤이 20%를 넘었을 때 자동으로 스냅할지 말지처럼 작은 동작 하나하나가 실제 사용 경험을 꽤 다르게 만든다는 걸 느꼈습니다. 기능을 동작하게 만드는 것보다 어떻게 동작해야 자연스러운지 먼저 생각하는 습관이 이 프로젝트에서 생겼습니다. IntersectionObserver처럼 직접 DOM API를 다룰 때는 cleanup을 빠뜨리면 메모리 누수가 눈에 띄지 않게 쌓인다는 것도 직접 챙기면서 배웠습니다.",
+    period: "2025.05 — 2025.06",
+    team: "프론트엔드 4",
+    role: "프론트엔드 개발",
+    features: [
+      {
+        title: "메인 페이지",
+        items: [
+          "Swiper 캐러셀에 Autoplay·Pagination·Navigation 모듈 조합, 사용자 인터랙션 후에도 자동 재생이 유지되도록 disableOnInteraction 설정",
+          "Framer Motion으로 슬라이드 전환 애니메이션과 스크롤 유도 화살표 floating 효과 구현",
+          "IntersectionObserver로 챗봇 섹션 진입 여부 감지해 UI 요소 표시 제어, ref 캐싱 후 cleanup에서 observer 해제해 메모리 누수 방지",
+          "useAutoScrollToSection 커스텀 훅으로 섹션을 20% 이상 스크롤 시 해당 섹션으로 자동 스냅, useIsMobile 훅으로 모바일·태블릿·데스크톱 반응형 처리",
+        ],
+      },
+      {
+        title: "챗봇 안내 페이지",
+        items: [
+          "소개·사용법·기능·FAQ·공지 5개 섹션으로 구성된 모듈형 가이드 페이지 구현",
+          "사이드바 네비게이션으로 섹션 간 즉시 이동, 해시 기반 URL과 스크롤을 동기화해 새로고침 시에도 위치 복원",
+          "반응형 레이아웃으로 데스크톱에서는 그리드, 모바일에서는 인라인 사이드바로 전환",
+        ],
+      },
+    ],
+    tech: [
+      "React",
+      "JavaScript",
+      "Vite",
+      "TailwindCSS",
+      "Swiper",
+      "Framer Motion",
+    ],
+    github: "https://github.com/nue-os/Ureca-Chatbot-Team3-Frontend",
+    demo: "https://youtu.be/WNlEKSNukGk",
+    image: "/images/yoplan/og.png",
+    imagePosition: "center",
+    screenshots: [
+      "/images/yoplan/1.png",
+      "/images/yoplan/2.png",
+      "/images/yoplan/3.png",
+      "/images/yoplan/4.png",
     ],
   },
   {
@@ -220,7 +266,6 @@ export const projects: Project[] = [
     ],
     github: "https://github.com/nue-os/fe_sharedoffice",
     demo: null,
-    featured: false,
     image: "/images/mile/og.png",
     imagePosition: "top",
     screenshots: [
@@ -283,7 +328,6 @@ export const projects: Project[] = [
     tech: ["React.js", "JavaScript", "CSS3", "Redux", "Axios"],
     github: "https://github.com/nue-os/capstone-2023-31",
     demo: "https://www.youtube.com/watch?v=NodPse4up2s",
-    featured: false,
     image: "/images/glassfit/og.png",
     imagePosition: "center",
     screenshots: [
