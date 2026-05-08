@@ -54,8 +54,8 @@ export const experiences: Experience[] = [
     tech: ["임베디드 SW 테스트", "HTML", "C++"],
   },
   {
-    company: "멋쟁이사자처럼 10기",
-    role: "프론트엔드 개발 동아리",
+    company: "멋쟁이사자처럼",
+    role: "웹 개발 동아리 - 프론트엔드",
     period: "2022.03 — 2022.12",
     description: [
       "HTML·CSS·JavaScript로 웹 개발의 기초를 다진 첫 번째 활동",
@@ -75,8 +75,8 @@ export const experiences: Experience[] = [
     tech: ["Jira", "QA", "테스트 케이스 설계"],
   },
   {
-    company: "KCC 개발 동아리",
-    role: "백엔드 개발",
+    company: "KCC",
+    role: "웹 개발 동아리 - 백엔드",
     period: "2021.03 — 2021.12",
     description: [
       "Python으로 백엔드 개발을 처음 접하며 개발에 흥미를 갖기 시작",
