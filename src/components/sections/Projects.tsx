@@ -89,7 +89,7 @@ export default function Projects() {
       <div className="max-w-6xl mx-auto">
         <SectionTitle number="02" title="Projects" />
 
-        <div ref={fadeRef} className="mt-16 grid sm:grid-cols-2 gap-6">
+        <div ref={fadeRef} className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, i) => (
             <ProjectCard key={i} project={project} onClick={() => setSelected(project)} />
           ))}
