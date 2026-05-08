@@ -9,8 +9,7 @@ export interface Project {
   tech: string[]
   github: string
   demo: string | null
-  featured: boolean
-  image?: string
+image?: string
   imagePosition?: 'top' | 'center' | 'bottom'
   screenshots?: string[]
   learned?: string
