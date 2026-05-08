@@ -18,7 +18,7 @@ export default function Contact() {
           </p>
 
           <a
-            href="mailto:kimsoeun0108@gmail.com"
+            href="mailto:nueos0108@gmail.com"
             className="inline-block px-10 py-4 border border-violet-500 text-violet-400 rounded-full text-lg font-medium hover:bg-violet-600/10 hover:shadow-[0_0_40px_rgba(124,58,237,0.3)] transition-all duration-300 hover:-translate-y-0.5"
           >
             이메일 보내기
