@@ -2,6 +2,8 @@
 
 프론트엔드 개발자 김소은의 포트폴리오 사이트입니다.
 
+[portfolio 바로가기](https://portfolio-omega-one-rj723jydqu.vercel.app/)
+
 ## Tech Stack
 
 - **React 19** + **TypeScript**
