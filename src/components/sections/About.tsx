@@ -30,17 +30,16 @@ export default function About() {
               <p className="text-slate-300 text-lg leading-relaxed">
                 안녕하세요! 저는{" "}
                 <span className="text-violet-400 font-medium">김소은</span>
-                입니다. 디지털 우주를 탐험하며 사용자에게 새로운 경험을 선사하는
-                프론트엔드 개발자입니다.
+                입니다. 눈에 안 보이는 0.1초를 고민하는 프론트엔드 개발자입니다.
               </p>
               <p className="text-slate-400 leading-relaxed">
-                새로운 기술은 저에게 미지의 행성과 같습니다. 두려움보다
-                호기심으로 접근하고, 코드의 품질과 성능을 별자리처럼 촘촘히
-                연결하는 것을 중요하게 생각합니다.
+                모르는 기술이 생기면 직접 써보면서 이해하는 걸 좋아합니다.
+                겉으로 잘 돌아가는 것만큼, 안에서도 단단한 코드를 만들고
+                싶습니다.
               </p>
               <p className="text-slate-400 leading-relaxed">
-                팀과 함께 만들어가는 것을 좋아하며, 사용자가 자연스럽게
-                사용할 수 있는 인터페이스를 구현하는 것이 저의 목표입니다.
+                팀과 함께 만들어가는 것을 좋아하며, 사용자가 자연스럽게 사용할
+                수 있는 인터페이스를 구현하는 것이 저의 목표입니다.
               </p>
 
               <div className="pt-4">
