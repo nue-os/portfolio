@@ -2,6 +2,15 @@ import type { Experience } from "../types/experience";
 
 export const experiences: Experience[] = [
   {
+    company: "CMC (Central MakeUs Challenge)",
+    role: "수익형 앱 런칭 동아리 19기 - Web 파트",
+    period: "2026.05 — ing",
+    description: [
+      "너디너리 해커톤 참여 - 비주류 + 음식을 주제로 한 꿀조합 레시피 공유 서비스 개발",
+    ],
+    tech: ["React", "TypeScript", "TailwindCSS"],
+  },
+  {
     company: "LG U+ | 멀티캠퍼스",
     role: "LG U+ 유레카 SW 교육과정 프론트엔드 2기",
     period: "2025.01 — 2025.08",
@@ -20,7 +29,7 @@ export const experiences: Experience[] = [
       "제주 월동작물 온라인 신고 시스템 기획·개발",
       "기존 2~3일 걸리던 현장 조사 프로세스를 10분 이내로 단축",
     ],
-    tech: ["Next.js", "TypeScript", "SCSS", "팀 협업"],
+    tech: ["Next.js", "TypeScript", "SCSS"],
   },
   {
     company: "네이버 커넥트",
@@ -42,6 +51,25 @@ export const experiences: Experience[] = [
       "정보보호 업무를 지원하며 보안 관점의 시야를 넓힘",
     ],
     tech: ["보안 분석", "취약점 분석"],
+  },
+  {
+    company: "패스트캠퍼스",
+    role: "패스트캠퍼스 개발 프로젝트십 7기",
+    period: "2024.04 — 2024.06",
+    description: ["공유 오피스 예약 서비스 프론트엔드 개발"],
+    tech: ["Next.js", "TypeScript", "TailwindCSS"],
+  },
+  {
+    company: "정보통신산업진흥원 | 과학기술정보통신부",
+    role: "2024 오픈소스 컨트리뷰션 아카데미(체험형)",
+    period: "2024.04 — 2024.05",
+    description: [
+      "Git 자동 머지 메커니즘 실습",
+      "Git Branch 충돌 실습",
+      "오픈 소스 기여하는 방법 학습",
+      "Git Fork 및 Reabse 실습",
+    ],
+    tech: ["Git", "JavaScript"],
   },
   {
     company: "벡터코리아아이티",
