@@ -108,7 +108,7 @@ export const projects: Project[] = [
         items: [
           "Doughnut·HalfDoughnut·수평 막대 차트를 각 데이터 특성에 맞게 조합해 구현",
           "HalfDoughnut 차트에서 커버리지 비율에 따라 색상을 동적으로 변경",
-          "SSR 환경에서 차트 라이브러리의 hydration 오류를 dynamic import로 방지",
+          "Recharts SSR 환경에서 hydration 오류 발생 시 클라이언트 마운트 후 렌더링되도록 처리",
         ],
       },
       {
