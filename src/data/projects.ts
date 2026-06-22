@@ -2,6 +2,84 @@ import type { Project } from "../types/project";
 
 export const projects: Project[] = [
   {
+    title: "IMC 기업 홍보 웹사이트",
+    description:
+      "전국 의류 재고 조사 전문 기업 IMC의 기업 홍보 웹사이트 — 실제 클라이언트 의뢰 단독 개발 및 배포",
+    longDescription:
+      "전국 의류 재고 조사 전문 기업 IMC의 기업 홍보 웹사이트입니다. 서비스 소개·프로세스·주요 실적을 한눈에 파악할 수 있도록 구성했고, Cloudflare Turnstile과 이메일 자동 발송을 연동한 문의 폼을 통해 잠재 고객이 바로 연락할 수 있는 창구를 제공합니다.",
+    learned:
+      "실제 클라이언트 도메인에 배포하며 개발 환경에서 재현되지 않던 문제(Resend 403, 파비콘 미인식)를 마주했습니다. 로컬에서 동작한다고 끝이 아니라 배포 환경의 설정·도메인·외부 서비스 연동까지 검증해야 한다는 것을 배웠고, 보안 측면에서도 XSS처럼 사용자 입력이 그대로 HTML에 삽입되는 경로를 의식적으로 점검하는 습관이 생겼습니다. 네이버 파워링크 광고 집행과 검색엔진 색인 등록까지 직접 진행한 결과 실제 문의가 접수되어, 개발 이후의 과정도 함께 경험할 수 있었습니다.",
+    period: "2026.03 — 2026.06",
+    role: "단독 개발",
+    features: [
+      {
+        title: "문의 폼 · 보안",
+        items: [
+          "Cloudflare Turnstile로 봇 요청 차단, 사람 인증 완료 시에만 제출 버튼 활성화",
+          "사용자 입력값을 HTML 이스케이프(& < > \" ')해 이메일 템플릿 내 XSS 공격 방지",
+          "프론트엔드 maxLength 속성과 API 서버 측 길이 검증을 이중으로 적용해 비정상 입력 차단",
+          "Resend로 관리자 알림 메일·사용자 자동 회신 메일을 동시 발송, 인증된 도메인에서 발신해 스팸 분류 방지",
+        ],
+      },
+      {
+        title: "SEO 최적화",
+        items: [
+          "Next.js Metadata API로 페이지별 title·description·Open Graph 개별 설정",
+          "sitemap.ts·robots.ts로 검색엔진 크롤링 경로 명시, Google Search Console·네이버 서치어드바이저에 색인 등록",
+          "소유권 인증 메타태그(google-site-verification, naver-site-verification)를 코드 레벨에서 관리",
+        ],
+      },
+      {
+        title: "애니메이션 · UX",
+        items: [
+          "Framer Motion useInView로 섹션 진입 시 페이드인 애니메이션 트리거",
+          "requestAnimationFrame + easeOutCubic 커브를 직접 구현한 숫자 카운트업으로 주요 실적(재고 오차율·고객 재의뢰율 등) 시각화",
+          "모바일·데스크톱 반응형 레이아웃, 이미지 최적화(next/image fill·sizes 설정)",
+        ],
+      },
+    ],
+    troubleshooting: [
+      {
+        title: "XSS 취약점",
+        items: [
+          "사용자 입력값을 검증 없이 이메일 HTML 템플릿에 직접 삽입해 스크립트 삽입 공격에 취약한 구조",
+          "& < > \" ' 5개 특수문자를 HTML 엔티티로 치환하는 escape() 함수를 직접 구현해 모든 입력값에 적용",
+        ],
+      },
+      {
+        title: "이메일 발신 도메인 불일치 경고",
+        items: [
+          "이메일 템플릿 내 mailto: 링크 도메인이 발신 도메인(2019imc.com)과 달라 Resend에서 경고 발생",
+          "mailto: 링크를 제거하고 이메일 주소를 평문으로 표시하는 방식으로 해결",
+        ],
+      },
+      {
+        title: "발신자명 경고",
+        items: [
+          "no-reply@ 주소 사용 시 Resend에서 스팸 처리 가능성 경고",
+          "contact@2019imc.com으로 변경해 수신자 신뢰도 개선",
+        ],
+      },
+    ],
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "TailwindCSS",
+      "Framer Motion",
+      "Cloudflare Turnstile",
+      "Resend",
+    ],
+    demo: "https://2019imc.com/",
+    image: "/images/imc/1.png",
+    imagePosition: "top",
+    screenshots: [
+      "/images/imc/1.png",
+      "/images/imc/2.png",
+      "/images/imc/3.png",
+      "/images/imc/4.png",
+    ],
+  },
+  {
     title: "데이터 용량 거래 플랫폼",
     description:
       "남는 무선 데이터를 개인 간 자유롭게 사고팔 수 있는 데이터 용량 거래 플랫폼",
