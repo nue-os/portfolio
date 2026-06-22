@@ -28,15 +28,17 @@ function ProjectCard({ project, onClick }: ProjectCardProps) {
         )}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(124,58,237,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(124,58,237,0.04)_1px,transparent_1px)] bg-size-[32px_32px]" />
         <div className="absolute top-3 right-3 flex gap-2">
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-8 h-8 flex items-center justify-center rounded-full bg-black/50 text-slate-400 hover:text-violet-400 transition-colors"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <GithubIcon className="w-4 h-4" />
-          </a>
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-8 h-8 flex items-center justify-center rounded-full bg-black/50 text-slate-400 hover:text-violet-400 transition-colors"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <GithubIcon className="w-4 h-4" />
+            </a>
+          )}
           {project.demo && (
             <a
               href={project.demo}

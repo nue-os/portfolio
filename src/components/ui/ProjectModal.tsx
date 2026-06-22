@@ -129,15 +129,17 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
             {/* 액션 버튼 */}
             <div className="flex gap-3">
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white rounded-lg text-sm transition-colors"
-              >
-                <GithubIcon className="w-4 h-4" />
-                GitHub
-              </a>
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white rounded-lg text-sm transition-colors"
+                >
+                  <GithubIcon className="w-4 h-4" />
+                  GitHub
+                </a>
+              )}
               {project.demo && (
                 <a
                   href={project.demo}
